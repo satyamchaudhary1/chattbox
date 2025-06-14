@@ -1,0 +1,134 @@
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: #ece5dd;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Chat container - responsive layout */
+.chat-container {
+  width: 100%;
+  max-width: 700px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f0f0f0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border-radius: 0;
+}
+
+/* Chat header */
+.header {
+  background-color: #075e54;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Chat section */
+#chat-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+/* Chat messages container */
+#messages {
+  flex: 1;
+  background-color: #e5ddd5;
+  padding: 10px;
+  border-radius: 8px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Message bubbles */
+.msg-user,
+.msg-admin {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 15px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+/* User message (right) */
+.msg-user {
+  align-self: flex-end;
+  background-color: #dcf8c6;
+  text-align: right;
+}
+
+/* Admin message (left) */
+.msg-admin {
+  align-self: flex-start;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+/* Input area */
+.chat-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#messageInput {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+}
+
+#sendBtn {
+  padding: 12px 20px;
+  background-color: #25d366;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .chat-container {
+    height: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .chat-input {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #messageInput,
+  #sendBtn {
+    width: 100%;
+  }
+}
